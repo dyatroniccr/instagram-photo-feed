@@ -16,23 +16,72 @@
   <link href="src/styles.css" rel="stylesheet">
 </head>
 
-<body class="bg-white">
-  <div class="container-fluid">
+<body>
+  <div class="row">
     <!-- Construccion del Nav-Bar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="./">
-          <img src="./src/icons/Instagram-Glyph-Black-Logo.svg" alt="Logo" width="30" height="24"
-            class="d-inline-block align-text-top">
-          Instagram
-        </a>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary container-fluid">
+      <div class="title-navbar col-lg-9 me-5">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-4" href="./">
+            <i class="bi bi-instagram"></i>          
+            Instagram
+          </a>
+        </div>
       </div>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Create a new post
-      </button>
-
+      <!-- BUTTON TRIGGER MODAL -->
+      <div class="modal-button m-0">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Create a new post
+        </button>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Create a new post</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Caption:</label>
+                    <textarea class="form-control" id="message-text"></textarea>
+                    <button type="button" class="btn btn-link">                    
+                      <img src="src/icons/icon_camera02.svg" alt="Logo" width="30" height="24"
+                        class="d-inline-block align-text-central">
+                    </button>
+                    <button type="button" class="btn btn-link">
+                      <img src="src/icons/icon_location01.svg" alt="Logo" width="30" height="24"
+                        class="d-inline-block align-text-central">
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Publish</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- EXAMPLE SINGLE DANGER BUTTON -->
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle ms-5 me-5" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="bi bi-gear"></i>
+          </button>       
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Accesibility</a></li>
+          <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+        </ul>
+      </div>
     </nav>
+
     
     <div class="panel-heading">
 
@@ -45,20 +94,16 @@
         <li class="nav-item" role="presentation">
           <button class="btn nav-link" id="grid1-tab" data-bs-toggle="tab" data-bs-target="#grid1-image" type="button"
             role="tab" aria-controls="grid1-image" aria-selected="false"><i class="bi bi-square"></i></button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link " aria-current="page" href="./templates/grid_oneimage.html" data-toggle="tab" data-bs-target="#grid3images" role="tab" aria-controls="#grid3images" aria-selected="true"><i
-          class="bi bi-grid-3x3-gap"></i></a>
-        </li>
+        </li>        
       </ul>
     </div>
 
-    <div class="panel-body">
-      
-      <div class="tab-pane fade active" id="grid3-tab-pane" role="tabpanel" aria-labelledby="grid3-tab" tabindex="0">
+    <div class="tab-content mt-4">      
+      <div class="tab-pane fade show active" id="grid3-tab-pane" role="tabpanel" aria-labelledby="grid3-tab" tabindex="0">
+
         <!--THE GRID WITH THREE IMAGE BY ROW-->
         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="grid3-tab" tabindex="0">
-          <div class="row justify-content-center mt-3 ms-3 me-3">
+          <div class="row justify-content-center mb-4 ms-3 me-3">
             <div class="col-lg-4 col-md-4" style="height: 440px;"><img src="./src/img/montana01.jpg" alt="" 
                 class="w-100 h-100"></div>
             <div class="col-lg-4 col-md-4" style="height: 440px;"><img src="./src/img/montana02.jpg" alt=""
@@ -66,7 +111,7 @@
             <div class="col-lg-4 col-md-4" style="height: 440px;"><img src="./src/img/montana03.jpg" alt=""
                 class="w-100 h-100"></div>
           </div>   
-          <div class="row justify-content-center mt-4 ms-3 me-3">
+          <div class="row justify-content-center mb-4 ms-3 me-3">
             <div class="col-lg-4 col-md-4" style="height: 440px;"><img src="./src/img/montana04.jpg" alt="" 
                 class="w-100 h-100"></div>
             <div class="col-lg-4 col-md-4" style="height: 440px;"><img src="./src/img/montana05.jpg" alt=""
@@ -74,7 +119,7 @@
             <div class="col-lg-4 col-md-4" style="height: 440px;"><img src="./src/img/montana06.jpg" alt=""
                 class="w-100 h-100"></div>
           </div>
-          <div class="row justify-content-center mt-4 ms-3 me-3">
+          <div class="row justify-content-center mb-4 ms-3 me-3">
             <div class="col-lg-4 col-md-4" style="height: 440px;"><img src="./src/img/montana07.jpg" alt="" 
                 class="w-100 h-100"></div>
             <div class="col-lg-4 col-md-4" style="height: 440px;"><img src="./src/img/montana08.jpg" alt=""
